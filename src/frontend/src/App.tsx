@@ -2,13 +2,16 @@ import { AnimatePresence } from "motion/react";
 import { useState } from "react";
 import { AboutSection } from "./components/AboutSection";
 import { AnimatedCursor } from "./components/AnimatedCursor";
+import { CTASection } from "./components/CTASection";
 import { ContactSection } from "./components/ContactSection";
+import { FeaturedProjectsSection } from "./components/FeaturedProjectsSection";
 import { FloatingWhatsApp } from "./components/FloatingWhatsApp";
 import { Footer } from "./components/Footer";
 import { HeroSection } from "./components/HeroSection";
 import { LoadingScreen } from "./components/LoadingScreen";
 import { Navbar } from "./components/Navbar";
 import { ProjectsSection } from "./components/ProjectsSection";
+import { RobotAvatar } from "./components/RobotAvatar";
 import { SkillsSection } from "./components/SkillsSection";
 import { SocialSection } from "./components/SocialSection";
 
@@ -32,12 +35,15 @@ export default function App() {
             <HeroSection />
             <AboutSection />
             <ProjectsSection />
+            <FeaturedProjectsSection />
             <SkillsSection />
             <SocialSection />
+            <CTASection />
             <ContactSection />
           </main>
           <Footer />
           <FloatingWhatsApp />
+          <RobotAvatar />
         </>
       )}
     </div>

@@ -7,9 +7,9 @@ const socials = [
   {
     id: 1,
     name: "Instagram",
-    handle: "@saklinmustak",
+    handle: "@saklin_459",
     Icon: SiInstagram,
-    href: "https://instagram.com",
+    href: "https://www.instagram.com/saklin_459?igsh=eXR6ZGdiZjVlaTk2",
     color: "oklch(0.72 0.22 340)",
     gradient:
       "linear-gradient(135deg, oklch(0.72 0.22 340), oklch(0.72 0.22 40))",
@@ -18,9 +18,9 @@ const socials = [
   {
     id: 2,
     name: "GitHub",
-    handle: "@saklinmustak",
+    handle: "@saklinmust",
     Icon: SiGithub,
-    href: "https://github.com",
+    href: "https://github.com/saklinmust",
     color: "oklch(0.75 0.2 200)",
     gradient:
       "linear-gradient(135deg, oklch(0.55 0.05 260), oklch(0.75 0.05 260))",
@@ -39,7 +39,11 @@ const socials = [
   },
 ];
 
-export function SocialSection() {
+interface SocialSectionProps {
+  onSocialHover?: (hovered: boolean) => void;
+}
+
+export function SocialSection({ onSocialHover }: SocialSectionProps) {
   return (
     <section id="social" className="section-padding relative">
       <div
@@ -100,6 +104,8 @@ export function SocialSection() {
                     borderColor: `${social.color}60`,
                     boxShadow: `0 0 40px ${social.color}20, 0 0 80px ${social.color}08`,
                   }}
+                  onHoverStart={() => onSocialHover?.(true)}
+                  onHoverEnd={() => onSocialHover?.(false)}
                   data-ocid={`social.item.${social.id}`}
                 >
                   {/* Icon container */}

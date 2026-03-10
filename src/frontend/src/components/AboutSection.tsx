@@ -1,7 +1,6 @@
 import { Code2, Sparkles, User } from "lucide-react";
-import { motion } from "motion/react";
-import { useEffect, useState } from "react";
-import { useInView } from "react-intersection-observer";
+import { motion, useInView } from "motion/react";
+import { useEffect, useRef, useState } from "react";
 import { ScrollReveal } from "./ScrollReveal";
 import { TiltCard } from "./TiltCard";
 
@@ -16,7 +15,8 @@ const skills = [
 
 function SkillBar({ name, level }: { name: string; level: number }) {
   const [progress, setProgress] = useState(0);
-  const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.5 });
+  const ref = useRef(null);
+  const inView = useInView(ref, { once: true, amount: 0.5 });
 
   useEffect(() => {
     if (inView) {
@@ -68,7 +68,6 @@ function SkillBar({ name, level }: { name: string; level: number }) {
 export function AboutSection() {
   return (
     <section id="about" className="section-padding relative">
-      {/* Background accent */}
       <div
         className="absolute inset-0 pointer-events-none"
         style={{
@@ -78,7 +77,6 @@ export function AboutSection() {
       />
 
       <div className="max-w-6xl mx-auto relative">
-        {/* Heading */}
         <ScrollReveal className="text-center mb-16">
           <p
             className="font-mono text-xs tracking-[0.4em] uppercase mb-4"
@@ -99,16 +97,12 @@ export function AboutSection() {
           />
         </ScrollReveal>
 
-        {/* Two columns */}
         <div className="grid md:grid-cols-2 gap-8">
-          {/* Bio card */}
           <ScrollReveal direction="left" delay={0.1}>
             <TiltCard className="h-full">
               <div
                 className="glass rounded-2xl p-8 h-full"
-                style={{
-                  boxShadow: "0 0 30px oklch(0.75 0.2 200 / 0.05)",
-                }}
+                style={{ boxShadow: "0 0 30px oklch(0.75 0.2 200 / 0.05)" }}
               >
                 <div className="flex items-center gap-3 mb-6">
                   <div
@@ -183,14 +177,11 @@ export function AboutSection() {
             </TiltCard>
           </ScrollReveal>
 
-          {/* Skills card */}
           <ScrollReveal direction="right" delay={0.2}>
             <TiltCard className="h-full">
               <div
                 className="glass rounded-2xl p-8 h-full"
-                style={{
-                  boxShadow: "0 0 30px oklch(0.65 0.22 290 / 0.05)",
-                }}
+                style={{ boxShadow: "0 0 30px oklch(0.65 0.22 290 / 0.05)" }}
               >
                 <div className="flex items-center gap-3 mb-6">
                   <div

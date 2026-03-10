@@ -1,6 +1,6 @@
-import { motion } from "motion/react";
+import { motion, useInView } from "motion/react";
 import type { ReactNode } from "react";
-import { useInView } from "react-intersection-observer";
+import { useRef } from "react";
 
 interface ScrollRevealProps {
   children: ReactNode;
@@ -17,10 +17,8 @@ export function ScrollReveal({
   direction = "up",
   threshold = 0.1,
 }: ScrollRevealProps) {
-  const { ref, inView } = useInView({
-    threshold,
-    triggerOnce: true,
-  });
+  const ref = useRef(null);
+  const inView = useInView(ref, { once: true, amount: threshold });
 
   const directionOffset = {
     up: { y: 40, x: 0 },

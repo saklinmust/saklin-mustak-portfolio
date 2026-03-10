@@ -120,23 +120,35 @@ export function HeroSection() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.5 }}
         >
-          <span style={{ color: "oklch(0.9 0.02 260)" }}>Hi, I'm </span>
+          <span style={{ color: "oklch(0.95 0.02 260)" }}>Hi, I&apos;m </span>
           <span
             style={{
               background:
-                "linear-gradient(135deg, oklch(0.75 0.2 200), oklch(0.65 0.22 290), oklch(0.8 0.18 160))",
+                "linear-gradient(135deg, oklch(0.75 0.2 200), oklch(0.8 0.18 160))",
               WebkitBackgroundClip: "text",
               backgroundClip: "text",
               WebkitTextFillColor: "transparent",
             }}
           >
-            Saklin Mustak
+            Saklin
+          </span>
+          <span style={{ color: "oklch(0.95 0.02 260)" }}> </span>
+          <span
+            style={{
+              background:
+                "linear-gradient(135deg, oklch(0.65 0.22 290), oklch(0.75 0.2 320))",
+              WebkitBackgroundClip: "text",
+              backgroundClip: "text",
+              WebkitTextFillColor: "transparent",
+            }}
+          >
+            Mustak
           </span>
         </motion.h1>
 
         {/* Typing text */}
         <motion.div
-          className="text-xl sm:text-2xl md:text-3xl mb-10 h-10 flex items-center justify-center"
+          className="text-xl sm:text-2xl md:text-3xl mb-4 h-10 flex items-center justify-center"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.7 }}
@@ -149,6 +161,18 @@ export function HeroSection() {
             |
           </span>
         </motion.div>
+
+        {/* Subtext */}
+        <motion.p
+          className="text-sm sm:text-base max-w-xl mx-auto mb-10 leading-relaxed"
+          style={{ color: "oklch(0.55 0.05 260)" }}
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.85 }}
+        >
+          I design clean, responsive websites with smooth animations that help
+          businesses stand out online.
+        </motion.p>
 
         {/* Buttons */}
         <motion.div
